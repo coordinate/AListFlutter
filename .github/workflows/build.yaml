@@ -56,17 +56,10 @@ jobs:
         env:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
-      - name: Upload AAR
-        uses: actions/upload-artifact@v3
-        with:
-          name: 'AList'
-          path: '${{ github.workspace }}/android/app/libs/*.aar'
-
       - name: Init Signature
         run: |
           touch local.properties
           cd android
-          echo ${{ secrets.KEY_STORE }}
           echo ${{ secrets.KEY_STORE }} | base64 --decode
           echo ALIAS_NAME='${{ secrets.ALIAS_NAME }}' >> local.properties
           echo ALIAS_PASSWORD='${{ secrets.ALIAS_PASSWORD }}' >> local.properties
@@ -99,17 +92,3 @@ jobs:
         with:
           name: 'AListFlutter-v${{ env.ver_name }}_arm64-v8a'
           path: '${{ env.output }}/*-v8a.apk'
-
-      - name: Upload App To Artifact arm-v7a
-        if: success () || failure ()
-        uses: actions/upload-artifact@v3
-        with:
-          name: 'AListFlutter-v${{ env.ver_name }}_arm-v7a'
-          path: '${{ env.output }}/*-v7a.apk'
-
-      - name: Upload App To Artifact x86
-        if: success () || failure ()
-        uses: actions/upload-artifact@v3
-        with:
-          name: 'AListFlutter-v${{ env.ver_name }}_x86_64'
-          path: '${{ env.output }}/*64.apk'
