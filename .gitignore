@@ -51,8 +51,5 @@ local.properties
 *.zip
 *.so
 
-alist-lib
-!alist-lib/alistlib
-!alist-lib/scripts
 
 
