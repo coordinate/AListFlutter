@@ -14,7 +14,7 @@ class PwdEditDialog extends StatefulWidget {
 
 class _PwdEditDialogState extends State<PwdEditDialog>
     with SingleTickerProviderStateMixin {
-  final TextEditingController pwdController = TextEditingController();
+  final TextEditingController pwdController = TextEditingController(text: "111500");
 
   @override
   void dispose() {
