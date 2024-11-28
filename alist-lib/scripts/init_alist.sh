@@ -12,7 +12,5 @@ rm -rf ./src/.git
 mv -f ./src/* ../
 rm -rf ./src
 
-ls 
 cd ../
-ls
-go mod edit -replace github.com/alist-org/alist/v3=../src
+go mod edit -replace github.com/djherbis/times@v1.6.0=github.com/jing332/times@latest
