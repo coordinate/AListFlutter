@@ -1,10 +1,10 @@
 package alistlib
 
 import (
-	"github.com/alist-org/alist/v3/cmd"
-	"github.com/alist-org/alist/v3/cmd/flags"
-	"github.com/alist-org/alist/v3/internal/op"
-	"github.com/alist-org/alist/v3/pkg/utils"
+	"github.com/coordinate/alist/cmd"
+	"github.com/coordinate/alist/cmd/flags"
+	"github.com/coordinate/alist/internal/op"
+	"github.com/coordinate/alist/pkg/utils"
 )
 
 func SetConfigData(path string) {
