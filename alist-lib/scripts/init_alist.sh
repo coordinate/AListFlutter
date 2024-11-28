@@ -12,5 +12,7 @@ rm -rf ./src/.git
 mv -f ./src/* ../
 rm -rf ./src
 
+ls 
 cd ../
+ls
 go mod edit -replace github.com/alist-org/alist/v3=../src
