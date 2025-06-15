@@ -80,7 +80,7 @@ jobs:
 
       - name: Upload missing_rules.txt
         if: failure() && steps.gradle.outcome != 'success'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 'missing_rules'
           path: '${{ github.workspace }}/build/app/outputs/mapping/release/missing_rules.txt'
@@ -91,7 +91,7 @@ jobs:
 
       - name: Upload App To Artifact arm64-v8a
         if: success () || failure ()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: 'AListFlutter-v${{ env.ver_name }}_arm64-v8a'
           path: '${{ env.output }}/*-v8a.apk'
